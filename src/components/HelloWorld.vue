@@ -1,86 +1,79 @@
 <template>
   <div class="home">
-    <!-- <Second :second="second" />
-    <Minute :minute="minute" />
-    <Hour :hour="hour" />
-    <Apm :apm="apm" />
-    <Week :week="week" />
-    <Day :day="day" />-->
-    <!-- <Month :month="month" />
-    <Setting />-->
-    <div class="year">2019</div>
+    <div class="year">{{year}}</div>
     <!-- 年月日 天干地支 时分秒 星期 -->
-    <Month></Month>
-    <Day></Day>
-    <Hour></Hour>
-    <Minute></Minute>
-    <Second></Second>
+    <Month  :month="month"></Month>
+    <Weekend :Weekend="Weekend"/>
+        <Hour :hour="hour"></Hour>
+    <Day :day="day"></Day>
+    <Minute :minute="minute"></Minute>
+    <Second :second="second"></Second>
 
-    <!-- <Weekend></Weekend> -->
+<!-- <embed style="display:none" src="../../static/clock.mp3" hidden="true" autostart="true" loop="-1" > -->
   </div>
 </template>
 
 <script>
-import Second from '@/components/Second.vue'
-import Minute from '@/components/Minute.vue'
-import Hour from '@/components/Hour.vue'
-// import Apm from "@/components/Apm.vue";
-import Weekend from '@/components/Weekend.vue'
-import Day from '@/components/Day.vue'
-import Month from '@/components/Month.vue'
-// import Setting from '@/components/setting'
+/* eslint-disable */
+import Second from "@/components/Second.vue";
+import Minute from "@/components/Minute.vue";
+import Hour from "@/components/Hour.vue";
+import Weekend from "@/components/Weekend.vue";
+import Day from "@/components/Day.vue";
+import Month from "@/components/Month.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     Second,
     Minute,
     Hour,
-    // Apm,
     Weekend,
     Day,
     Month
-    // Setting
   },
-  data () {
+  data() {
     return {
-      second: '',
-      minute: '',
-      hour: '',
-      apm: '',
-      Weekend: '',
-      day: '',
-      month: ''
-    }
+      second: "",
+      minute: "",
+      hour: "",
+      Weekend: "",
+      day: "",
+      month: "",
+      year: ""
+    };
   },
   methods: {
-    start  () {
+    start() {
       setInterval(() => {
-        let data = new Date()
-        this.second = data.getSeconds()
-        this.minute = data.getMinutes()
-        this.hour = data.getHours()
-        this.week = data.getDay()
-        this.day = data.getDate()
-        this.month = data.getMonth() + 1
+        let data = new Date();
+        this.year = data.getFullYear();
+        this.second = data.getSeconds() + 1;
+        this.minute = data.getMinutes() + 1;
+        this.hour = data.getHours();
+        this.Weekend = data.getDay();
+        this.day = data.getDate();
+        this.month = data.getMonth() + 1;
         // if (this.hour > 12) {
         //   this.apm = 2
         // } else {
         //   this.apm = 1
         // }
         // console.log(data)
-      }, 1000)
+      }, 1000);
     }
   },
-  created () {
-    this.start()
+  created() {
+    this.start();
+    console.log("别问 问就是没做移动端适配");
   }
-}
+};
 </script>
 <style lang="scss">
 .home {
   ul,
   .year {
+    color: #fff;
     list-style-type: none;
     padding: 0;
     position: absolute;
@@ -91,9 +84,10 @@ export default {
     margin: auto;
     height: 60px;
     width: 60px;
-    transform-origin: top left;
+    // transform-origin: center bottom;
+    // transform-origin: top left;
     transition: 0.1s 0.1s ease-in;
-    background-color: red;
+    // background-color: red;
 
     li {
       position: absolute;
@@ -103,6 +97,12 @@ export default {
       text-align: center;
       line-height: 60px;
       font-size: 14px;
+      // 高亮
+      &.hover {
+        text-shadow: #ff6666 0px 0px 10px, #ff9900 0px 0px 20px,
+          #ff99cc 0px 0px 30px, #66cccc 0px 0px 40px, #ff99cc 0px 0px 70px,
+          #ccff66 0px 0px 80px, #ff99cc 0px 0px 100px;
+      }
     }
   }
 }

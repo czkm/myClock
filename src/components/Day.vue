@@ -1,14 +1,18 @@
 <!--  -->
 <template>
   <div>
-    <ul>
-      <li v-for="(item, index) in dayList" :key="index">{{ item }}</li>
+    <ul :style="{ transform: `rotate(${rotates * -11.613}deg)` }">
+      <li
+      :class="{ hover: index == rotates - 1  }"
+      v-for="(item, index) in dayList" :key="index">{{ item }}</li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'day',
+  props: ['day'],
   data () {
     return {
       dayList: [
@@ -43,7 +47,15 @@ export default {
         '二十九号',
         '三十号',
         '三十一号'
-      ]
+      ],
+      rotates: ''
+    }
+  },
+
+  watch: {
+    day (val) {
+      this.rotates = val
+      console.log(this.rotates)
     }
   }
 }

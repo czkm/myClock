@@ -1,14 +1,18 @@
 <!--  -->
 <template>
   <div>
-    <ul>
-      <li v-for="(item, index) in hourlist" :key="index">{{ item }}</li>
+    <ul :style="{ transform: `rotate(${rotates * -15}deg)` }">
+      <li
+       :class="{ hover: index == rotates - 1 }"
+       v-for="(item, index) in hourlist" :key="index" >{{ item }}</li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'hour',
+  props: ['hour'],
   data () {
     return {
       hourlist: [
@@ -31,12 +35,18 @@ export default {
         '十七时',
         '十八时',
         '十九时',
-        '二零时',
-        '二一时',
-        '二二时',
-        '二三时',
-        '二四时'
-      ]
+        '二十时',
+        '二十一时',
+        '二十二时',
+        '二十三时',
+        '二十四时'
+      ],
+      rotates: ''
+    }
+  },
+  watch: {
+    hour (val) {
+      this.rotates = val
     }
   }
 }
@@ -46,7 +56,7 @@ ul {
   z-index: 8;
   @for $i from 1 through 24 {
     li:nth-child(#{$i}) {
-      transform: rotate(#{$i * 360/24 * 1deg}) translateX(240px);
+      transform: rotate(#{$i *15 * 1deg}) translateX(240px);
     }
   }
 }

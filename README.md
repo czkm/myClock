@@ -1,6 +1,7 @@
-<<<<<<< HEAD
+
 # myclock
 
+https://czkm.github.io/Clockdist/index.html#/
 > A Vue.js project
 
 ## Build Setup
@@ -32,4 +33,3 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 =======
 # my_clock
 模仿呈现的时钟表盘
->>>>>>> c4f3abb138b51d1bc70a4ba616aa91f26b826c11

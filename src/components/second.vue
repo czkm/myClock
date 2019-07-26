@@ -94,7 +94,7 @@ ul {
   z-index: 10;
   @for $i from 1 through 60 {
     li:nth-child(#{$i}) {
-      transform: rotate(#{$i * 6 * 1deg}) translateX(360px);
+      transform: rotate(#{$i * 6 * 1deg}) translateX(360rem);
     }
   }
 }

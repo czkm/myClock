@@ -40,7 +40,7 @@ export default {
       Weekend: "",
       day: "",
       month: "",
-      year: ""
+      year: "2019"
     };
   },
   methods: {
@@ -63,6 +63,7 @@ export default {
       }, 1000);
     }
   },
+
   created() {
     this.start();
     console.log("别问 问就是没做移动端适配");
@@ -70,6 +71,7 @@ export default {
 };
 </script>
 <style lang="scss">
+$rem: 32rem;
 .home {
   ul,
   .year {
@@ -82,8 +84,10 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
-    height: 60px;
-    width: 60px;
+    height: 60rem;
+    width: 60rem;
+    font-size: 16rem;
+
     // transform-origin: center bottom;
     // transform-origin: top left;
     transition: 0.1s 0.1s ease-in;
@@ -91,17 +95,18 @@ export default {
 
     li {
       position: absolute;
-      height: 60px;
-      width: 60px;
+      height: 60rem;
+      width: 60rem;
       color: #fff;
       text-align: center;
-      line-height: 60px;
-      font-size: 14px;
+      line-height: 60rem;
+      font-size: 14rem;
       // 高亮
       &.hover {
-        text-shadow: #ff6666 0px 0px 10px, #ff9900 0px 0px 20px,
-          #ff99cc 0px 0px 30px, #66cccc 0px 0px 40px, #ff99cc 0px 0px 70px,
-          #ccff66 0px 0px 80px, #ff99cc 0px 0px 100px;
+        text-shadow: #ff6666 0rem 0rem 10rem, #ff9900 0rem 0rem 20rem,
+          #ff99cc 0rem 0rem 30rem, #66cccc 0rem 0rem 40rem,
+          #ff99cc 0rem 0rem 70rem, #ccff66 0rem 0rem 80rem,
+          #ff99cc 0rem 0rem 100rem;
       }
     }
   }
@@ -109,6 +114,6 @@ export default {
 .year {
   z-index: 99;
   text-align: center;
-  line-height: 60px;
+  line-height: 60rem;
 }
 </style>

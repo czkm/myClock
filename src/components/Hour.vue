@@ -56,7 +56,7 @@ ul {
   z-index: 8;
   @for $i from 1 through 24 {
     li:nth-child(#{$i}) {
-      transform: rotate(#{$i *15 * 1deg}) translateX(240px);
+      transform: rotate(#{$i *15 * 1deg}) translateX(240rem);
     }
   }
 }

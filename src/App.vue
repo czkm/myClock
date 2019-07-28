@@ -10,13 +10,10 @@ export default {
   data() {},
   methods: {
     isMobile() {
-      console.log( document.documentElement.clientWidth)
       if ( document.documentElement.clientWidth  <= 800) {
-        console.log("121231313123");
         return true; // 移动端
       } else {
         return false; // PC端
-        console.log("456456456");
       }
     },
 
@@ -26,14 +23,14 @@ export default {
     }
   },
   mounted() {
-    let flag = this.isMobile();
-    if (flag) {
-    //   console.log(a);
-    this.isMobile()
-      this.setrem();
-    } else {
-      document.documentElement.style.fontSize = 1 + "px";
-    }
+    // let flag = this.isMobile();
+    // if (flag) {
+    // //   console.log(a);
+    // this.isMobile()
+    //   this.setrem();
+    // } else {
+    //   document.documentElement.style.fontSize = 1 + "px";
+    // }
   }
 };
 </script>

@@ -3,7 +3,7 @@ const remchange = (function (c, d) {
     a = "orientationchange" in window ? "orientationchange" : "resize",
     b = function () {
       var f = e.clientWidth;
-      e.style.fontSize = (f >= 750) ? "1px" : 100 * (f / 750) + "px"
+      e.style.fontSize = (f >= 750) ? "1px"   : 1 * (f / 750) + "px"
     };
   b();
   c.addEventListener(a, b, false)

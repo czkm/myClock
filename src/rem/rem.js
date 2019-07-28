@@ -1,5 +1,4 @@
-;
-(function (c, d) {
+const remchange = (function (c, d) {
   var e = document.documentElement || document.body,
     a = "orientationchange" in window ? "orientationchange" : "resize",
     b = function () {
@@ -9,3 +8,4 @@
   b();
   c.addEventListener(a, b, false)
 })(window);
+export default remchange

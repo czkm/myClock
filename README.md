@@ -1,7 +1,7 @@
 
 # myclock
 
-https://czkm.github.io/Clockdist/#/
+https://czkm.github.io/myClock/#/
 > A Vue.js project
 
 ## Build Setup
